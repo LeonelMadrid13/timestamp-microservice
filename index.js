@@ -31,12 +31,12 @@ app.get("/api/:date", function (req, res) {
   if(date == parseInt(date)){
     res.json({
       "unix": parseInt(date), 
-      "utc": new Date(unix).toUTCString()
+      "utc": new Date(parseInt(date)).toUTCString()
     });
   } else if(check_date.test(date)){
     res.json({
       "unix": new Date(date).getTime(), 
-      "utc": new Date(unix).toUTCString()
+      "utc": new Date(parseInt(date)).toUTCString()
     });
   }
   else{
